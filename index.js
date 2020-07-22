@@ -11,7 +11,12 @@ const dbConnection = mysql.createConnection({
 dbConnection.connect();
 
 const app = express();
-
+app.get('/test', (req, res) => {
+        res.status(200).json({
+            success: true,
+            data: "string"
+        });
+})
 
 // categories
 app.get('/categories', (req, res) => {
